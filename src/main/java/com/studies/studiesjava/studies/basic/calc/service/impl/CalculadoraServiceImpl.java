@@ -1,0 +1,40 @@
+package com.studies.studiesjava.studies.basic.calc.service.impl;
+
+import com.studies.studiesjava.studies.basic.calc.enums.Operacoes;
+import com.studies.studiesjava.studies.basic.calc.service.CalculadoraService;
+
+import java.lang.invoke.SwitchPoint;
+import java.math.BigDecimal;
+
+public class CalculadoraServiceImpl implements CalculadoraService {
+    @Override
+    public BigDecimal somar(BigDecimal n1, BigDecimal n2) {
+        return calcular(n1, n2, Operacoes.SOMA);
+    }
+
+    @Override
+    public BigDecimal subtrair(BigDecimal n1, BigDecimal n2) {
+        return calcular(n1, n2, Operacoes.SUBTRACAO);
+    }
+
+    @Override
+    public BigDecimal multiplicar(BigDecimal n1, BigDecimal n2) {
+        return calcular(n1, n2, Operacoes.MULTIPLICACAO);
+    }
+
+    @Override
+    public BigDecimal dividir(BigDecimal n1, BigDecimal n2) {
+        return calcular(n1, n2, Operacoes.DIVISAO);
+    }
+
+    private BigDecimal calcular(BigDecimal n1, BigDecimal n2, Operacoes oper) {
+        BigDecimal retorno = BigDecimal.ZERO;
+        switch (oper) {
+            case SOMA: retorno = n1.add(n2); break;
+            case SUBTRACAO: retorno = n1.subtract(n2); break;
+            case MULTIPLICACAO: retorno = n1.multiply(n2); break;
+            case DIVISAO: retorno = n1.divide(n2); break;
+        }
+        return retorno;
+    }
+}
