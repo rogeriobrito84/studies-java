@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.20.3.final using JasperReports Library version 6.20.3-415f9428cffdb6805c6f85bbb29ebaf18813a2ab  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="studies-relatorio" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6c339a38-202e-4d35-844f-8c4cc3f4221d">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="New Data Adapter"/>
+	<style name="td_detail" mode="Transparent" hTextAlign="Center" vTextAlign="Middle" pattern="" isBlankWhenNull="true">
+		<pen lineWidth="4.0" lineStyle="Solid" lineColor="#45993D"/>
+		<box>
+			<pen lineColor="#2E7A28"/>
+			<topPen lineWidth="0.5"/>
+			<leftPen lineWidth="0.5" lineStyle="Solid"/>
+			<bottomPen lineWidth="0.5"/>
+			<rightPen lineWidth="0.5"/>
+		</box>
+	</style>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="codigoEmpresa" class="java.lang.String">
+		<fieldDescription><![CDATA[codigoEmpresa]]></fieldDescription>
+	</field>
+	<field name="nomeEmpresa" class="java.lang.String">
+		<fieldDescription><![CDATA[nomeEmpresa]]></fieldDescription>
+	</field>
+	<field name="cpfCnpj" class="java.lang.String">
+		<fieldDescription><![CDATA[cpfCnpj]]></fieldDescription>
+	</field>
+	<field name="dataConsulta" class="java.lang.String">
+		<fieldDescription><![CDATA[dataConsulta]]></fieldDescription>
+	</field>
+	<field name="tarifaDTOS" class="com.studies.studiesjava.dto.TarifaDTO">
+		<fieldDescription><![CDATA[tarifaDTOS]]></fieldDescription>
+	</field>
+	<field name="dataGeracao" class="java.lang.String">
+		<fieldDescription><![CDATA[dataGeracao]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="208" y="0" width="100" height="30" uuid="a130d4b0-403d-454b-9c80-35935e07cf63">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ac14101b-04cc-4b11-aa71-ab2178fbe124"/>
+				</reportElement>
+				<text><![CDATA[nomeEmpresa]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch">
+			<textField>
+				<reportElement key="" style="td_detail" x="208" y="53" width="100" height="30" uuid="1bb62c84-f627-4f20-ace6-4a1640688c79">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ac14101b-04cc-4b11-aa71-ab2178fbe124"/>
+				</reportElement>
+				<box topPadding="0" leftPadding="0" bottomPadding="0" rightPadding="0"/>
+				<textFieldExpression><![CDATA[$F{nomeEmpresa}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
