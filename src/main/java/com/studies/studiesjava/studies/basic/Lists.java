@@ -12,9 +12,9 @@ public class Lists {
 
     Double[] listaDoubles = new Double[4];
 
-    static String[] listaNomes2 = {"Nome1", "Nome2", "Nome3"};
+    static String[] listaNomes2 = {"Nome1"};
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
 
         System.out.println(Lists.listaNomes2[2]);
 
@@ -30,22 +30,22 @@ public class Lists {
         System.out.println(l.soma(v1, v2));
         System.out.println(v1);
 
-        System.out.println("Soma: " + l.soma(1,2,3,4,5,6,7,8));
+        System.out.println("Soma: " + l.soma(1, 2, 3, 4, 5, 6, 7, 8));
     }
 
-    public int soma(int a, int b){
+    public int soma(int a, int b) {
         a = a + b;
         return a;
     }
 
-    public int soma(int a, int b, int c){
+    public int soma(int a, int b, int c) {
 
         a = a + b + c;
         return a;
 
     }
 
-    public int soma(int... numeros){
+    public int soma(int... numeros) {
 
         int total = 0;
 
