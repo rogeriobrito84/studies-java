@@ -1,6 +1,8 @@
 package com.studies.studiesjava.enums;
 
-public enum ReportMSGEnum implements MsgEnum {
+import com.studies.studiesjava.exception.MsgDefault;
+
+public enum ReportMSGEnum implements MsgDefault {
     ERROR_GENERATE_REPORT("Erro ao tentar gerar relatório.");
     final String message;
 

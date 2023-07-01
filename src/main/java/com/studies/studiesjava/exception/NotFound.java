@@ -1,14 +1,13 @@
 package com.studies.studiesjava.exception;
 
-import com.studies.studiesjava.enums.MsgEnum;
 import org.springframework.http.HttpStatus;
 
 public class NotFound extends BusinessException {
-    public NotFound(MsgEnum errorsEnum) {
+    public NotFound(MsgDefault errorsEnum) {
         super(errorsEnum);
     }
 
-    public NotFound(Throwable throwable, MsgEnum errorsEnum) {
+    public NotFound(Throwable throwable, MsgDefault errorsEnum) {
         super(throwable, errorsEnum);
     }
 

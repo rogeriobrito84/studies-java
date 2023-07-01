@@ -1,6 +1,8 @@
 package com.studies.studiesjava.enums;
 
-public enum ErrorEnum implements MsgEnum {
+import com.studies.studiesjava.exception.MsgDefault;
+
+public enum ErrorEnum implements MsgDefault {
     EXCEPTION_SYSTEM("Erro no sistema!"),
     EXCEPTION_SYSTEM_EXCEPTION_CAPTURED("Exceção de sistema capturada!"),
     EXCEPTION_UNEXPECTED("Ops! Ocorreu um erro inesperado! Estamos trabalhando para resolver o mais rápido possível."),

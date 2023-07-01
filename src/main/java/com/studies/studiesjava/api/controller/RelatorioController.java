@@ -21,8 +21,8 @@ public class RelatorioController implements RelatorioAPI {
     public ResponseEntity<byte[]> relatorioTarifa(ReportTypeEnum tipo) {
         ReportDTO dto = service.gerarRelatorio(tipo);
         HttpHeaders headers = new HttpHeaders();
-        headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
-        headers.setContentDispositionFormData("attachment", dto.getName());
+        headers.add(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_OCTET_STREAM_VALUE);
+        headers.add(HttpHeaders.CONTENT_DISPOSITION, String.format("attachment; filename=%s", dto.getName()));
 
         return ResponseEntity.ok()
                 .headers(headers)

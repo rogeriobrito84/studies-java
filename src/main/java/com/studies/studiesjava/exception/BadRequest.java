@@ -1,10 +1,9 @@
 package com.studies.studiesjava.exception;
 
-import com.studies.studiesjava.enums.MsgEnum;
 import org.springframework.http.HttpStatus;
 
 public class BadRequest extends BusinessException {
-    public BadRequest(MsgEnum errorsEnum) {
+    public BadRequest(MsgDefault errorsEnum) {
         super(errorsEnum);
     }
 

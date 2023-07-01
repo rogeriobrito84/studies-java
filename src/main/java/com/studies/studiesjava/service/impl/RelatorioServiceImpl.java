@@ -32,28 +32,33 @@ public class RelatorioServiceImpl implements RelatorioService {
         try {
             ReportJasper reportService = tipo.getService();
             RelatorioEntity relatorio = repository.getRelatorio();
-            Map<String, BigDecimal> mapTotais = getTotalForma(relatorio.getTarifaDTOS());
+            Map<String, BigDecimal> mapTotais = getTotaisForma(relatorio.getTarifaDTOS());
             String imagem = Objects.requireNonNull(
                     getClass().getResource(PASTA_RELATORIO)).toString().concat(NOME_IMAGEM);
 
-            Map<String, Object> params = new HashMap<>();
-            params.put(ParamRelTarifaEnum.CODIGO_EMPRESA.name(), relatorio.getCodigoEmpresa());
-            params.put(ParamRelTarifaEnum.NOME_EMPRESA.name(), relatorio.getNomeEmpresa());
-            params.put(ParamRelTarifaEnum.CPF_CNPJ.name(), relatorio.getCpfCnpj());
-            params.put(ParamRelTarifaEnum.DATA_CONSULTA.name(), relatorio.getDataConsulta());
-            params.put(ParamRelTarifaEnum.DATA_GERACAO.name(), relatorio.getDataGeracao());
-            params.put(ParamRelTarifaEnum.IMAGEM.name(), imagem);
-            params.put(ParamRelTarifaEnum.MAP_TOTAIS.name(), mapTotais);
+            Map<String, Object> params = criarParametros(relatorio, mapTotais, imagem);
 
-            return reportService.reportGenerate(tipo, PASTA_RELATORIO.concat(NOME_JASPER), params,
-                    relatorio.getTarifaDTOS(), PREFIX_NOME_ARQUIVO, relatorio.getDataConsulta().replaceAll("/", "-"),
+            return reportService.reportGenerate(tipo, PASTA_RELATORIO.concat(NOME_JASPER), params, relatorio.getTarifaDTOS(),
+                    PREFIX_NOME_ARQUIVO, relatorio.getDataConsulta().replaceAll("/", "-"),
                     relatorio.getCodigoEmpresa());
         } catch (Exception e) {
             throw new BusinessException(e, ReportMSGEnum.ERROR_GENERATE_REPORT);
         }
     }
 
-    private Map<String, BigDecimal> getTotalForma(List<TarifaEntity> tarifas) {
+    private Map<String, Object> criarParametros(RelatorioEntity relatorio, Map<String, BigDecimal> mapTotais, String imagem) {
+        Map<String, Object> params = new HashMap<>();
+        params.put(ParamRelTarifaEnum.CODIGO_EMPRESA.name(), relatorio.getCodigoEmpresa());
+        params.put(ParamRelTarifaEnum.NOME_EMPRESA.name(), relatorio.getNomeEmpresa());
+        params.put(ParamRelTarifaEnum.CPF_CNPJ.name(), relatorio.getCpfCnpj());
+        params.put(ParamRelTarifaEnum.DATA_CONSULTA.name(), relatorio.getDataConsulta());
+        params.put(ParamRelTarifaEnum.DATA_GERACAO.name(), relatorio.getDataGeracao());
+        params.put(ParamRelTarifaEnum.IMAGEM.name(), imagem);
+        params.put(ParamRelTarifaEnum.MAP_TOTAIS.name(), mapTotais);
+        return params;
+    }
+
+    private Map<String, BigDecimal> getTotaisForma(List<TarifaEntity> tarifas) {
         return tarifas.stream().collect(Collectors.groupingBy(
                 TarifaEntity::getDescricaoTarifa,
                 Collectors.mapping(
