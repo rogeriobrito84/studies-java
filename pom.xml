@@ -50,7 +50,7 @@
             <artifactId>h2</artifactId>
             <scope>runtime</scope>
         </dependency>
-        <!-- Dependências do Spring Boot -->
+        <!-- Dependency of  Spring Boot -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -62,13 +62,13 @@
             <version>2.5.2</version>
         </dependency>
 
-        <!--        Dependências do Swagger-->
+        <!-- Dependency of  Swagger-->
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-boot-starter</artifactId>
             <version>3.0.0</version>
         </dependency>
-        <!-- Dependências do JasperReports -->
+        <!-- Dependency of  JasperReports -->
         <dependency>
             <groupId>net.sf.jasperreports</groupId>
             <artifactId>jasperreports</artifactId>
@@ -79,40 +79,6 @@
             <artifactId>jasperreports-fonts</artifactId>
             <version>6.20.5</version>
         </dependency>
-
-        <!-- Dependências do Apache POI (para Excel) -->
-        <!--        <dependency>-->
-        <!--            <groupId>org.apache.poi</groupId>-->
-        <!--            <artifactId>poi</artifactId>-->
-        <!--            <version>5.0.0</version>-->
-        <!--        </dependency>-->
-        <!--        <dependency>-->
-        <!--            <groupId>org.apache.poi</groupId>-->
-        <!--            <artifactId>poi-ooxml</artifactId>-->
-        <!--            <version>5.0.0</version>-->
-        <!--        </dependency>-->
-
-        <!-- Dependência do Apache Commons CSV (para CSV) -->
-        <!--        <dependency>-->
-        <!--            <groupId>org.apache.commons</groupId>-->
-        <!--            <artifactId>commons-csv</artifactId>-->
-        <!--            <version>1.10.0</version>-->
-        <!--        </dependency>-->
-
-        <!-- Dependência do Apache POI (para PPTX) -->
-        <!--        <dependency>-->
-        <!--            <groupId>org.apache.poi</groupId>-->
-        <!--            <artifactId>poi-ooxml</artifactId>-->
-        <!--            <version>5.0.0</version>-->
-        <!--        </dependency>-->
-
-        <!-- Dependência do Digester (para xml) -->
-
-        <!--        <dependency>-->
-        <!--            <groupId>commons-digester</groupId>-->
-        <!--            <artifactId>commons-digester</artifactId>-->
-        <!--            <version>2.1</version>-->
-        <!--        </dependency>-->
     </dependencies>
 
     <build>
